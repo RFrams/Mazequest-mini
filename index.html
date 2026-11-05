@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1220">
+  <title>MazeQuest Mini</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hud">
+      <span id="hearts" aria-label="Hearts"></span>
+      <span id="coins"></span>
+      <span id="key"></span>
+      <span id="moves"></span>
+    </header>
+
+    <div class="stage">
+      <canvas id="board" aria-label="Maze board"></canvas>
+
+      <section id="menu" class="overlay">
+        <h1>MazeQuest <span>Mini</span></h1>
+        <p class="tag">Grab the key, flip the switch, dodge the spikes, reach the star.</p>
+        <button id="playBtn" class="primary">Play</button>
+        <button id="howBtn">How to play</button>
+        <div id="how" class="how hidden">
+          <p><b>Move:</b> arrow keys, WASD, the on-screen pad, or tap the board.</p>
+          <ul>
+            <li><b class="c-key">Key</b> opens the brown door.</li>
+            <li><b class="c-sw">Switch</b> opens the purple gate.</li>
+            <li><b class="c-trap">Spikes</b> cost a heart. 3 hearts total.</li>
+            <li><b class="c-coin">Coins</b> are optional. Grab all 5 for a star.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="end" class="overlay hidden">
+        <h2 id="endTitle"></h2>
+        <div id="endStars" class="stars"></div>
+        <p id="endText"></p>
+        <button id="againBtn" class="primary">Play again</button>
+        <button id="toMenuBtn">Menu</button>
+      </section>
+    </div>
+
+    <p id="msg" aria-live="polite"></p>
+
+    <div class="pad">
+      <button data-dir="up" class="up" aria-label="Up">&#9650;</button>
+      <button data-dir="left" class="left" aria-label="Left">&#9664;</button>
+      <button data-dir="down" class="down" aria-label="Down">&#9660;</button>
+      <button data-dir="right" class="right" aria-label="Right">&#9654;</button>
+    </div>
+
+    <div class="bar">
+      <button id="restart">Restart</button>
+      <button id="menuBtn">Menu</button>
+    </div>
+  </main>
+
+  <script src="logic.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
